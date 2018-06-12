@@ -1,0 +1,47 @@
+﻿@model Estabelecimento.Models.Produto
+
+@{
+    ViewBag.Title = "Excluir Produto";
+}
+
+
+
+<h2 class="text-danger">Deseja realmente excluir este produto?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Código
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Preço Unitário
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Excliur" class="btn btn-danger" /> 
+        @Html.ActionLink("Voltar Para Produtos", "Index", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    }
+</div>

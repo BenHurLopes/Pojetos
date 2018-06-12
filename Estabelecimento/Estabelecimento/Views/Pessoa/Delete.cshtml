@@ -1,0 +1,39 @@
+﻿@model Estabelecimento.Models.Pessoa
+
+@{
+    ViewBag.Title = "Excluir Pessoa";
+}
+
+
+
+<h2 class="text-danger">Deseja realmente excluir esta pessoa?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Data de Nascimento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            @Html.ActionLink("Voltar Para Pessoas", "Index", null, new { @class = "btn btn-primary btn-large" })
+        </div>
+    }
+</div>
