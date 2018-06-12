@@ -19,7 +19,7 @@ namespace Estabelecimento.Helpers
                           m.FluentMappings
                               .AddFromAssembly(Assembly.GetExecutingAssembly()))
                 .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                                        .SetOutputFile(@"D:\Git\Pojetos\Estabelecimento\Script.sql")
+                                        .SetOutputFile(@"D:\Git\Pojetos\Estabelecimento\Estabelecimento\Script.sql")
                                           .Create(false, false))
                     .BuildSessionFactory();
             return sessionFactory.OpenSession();
