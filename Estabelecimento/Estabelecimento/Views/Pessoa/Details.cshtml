@@ -1,0 +1,33 @@
+﻿@model Estabelecimento.Models.Pessoa
+
+@{
+    ViewBag.Title = "Detalhes da Pessoa";
+}
+
+<h2>Detalhes da Pessoa</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Data de Nascimento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Voltar Para Pessoas", "Index", null, new { @class = "btn btn-primary btn-large" })
+</p>
